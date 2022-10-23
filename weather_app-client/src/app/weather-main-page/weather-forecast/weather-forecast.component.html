@@ -1,0 +1,34 @@
+<section class="weatherBoard">
+  <div class="weatherBoard_mainInfoContainer">
+    <div class="weatherBoard_mainInfo">
+      <p class="weatherBoard_todayTemp">{{ todayData.temp }}°C</p>
+      <p class="weatherBoard_todayDate">
+        Today, {{ todayData.date | date: "dd LLL" }}
+      </p>
+    </div>
+    <div class="weatherBoard_iconContainer">
+      <img
+        [src]="todayData.iconSrc"
+        class="weatherBoard__mainIcon"
+        alt="Weather icon"
+      />
+    </div>
+    <app-weather-sub-info
+      [additionalInfo]="todayData.additionalInfo"
+      [isOnSenter]="false"
+    ></app-weather-sub-info>
+  </div>
+  <div class="weatherBoard_chartContainer">
+    <app-weather-forecast-chart
+      [weatherDataForChart]="weatherDataForChart"
+    ></app-weather-forecast-chart>
+  </div>
+
+  <div class="weatherBoard_cardContainer">
+    <app-weather-forecast-card
+      *ngFor="let weatherDataByDay of weatherDataByDay"
+      [weatherDataPerDay]="weatherDataByDay"
+    >
+    </app-weather-forecast-card>
+  </div>
+</section>

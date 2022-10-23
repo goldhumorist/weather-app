@@ -1,0 +1,60 @@
+@import "../../../variables";
+
+.buttonTogglerContainer {
+  width: 60%;
+  max-width: 400px;
+  min-width: 250px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 4vh;
+
+  .buttonToggler_Btn {
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+    border: 1px solid $color-btn-primary;
+    background-color: $color-btn-primary;
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    transition: background-color cubic-bezier(0.165, 0.84, 0.44, 1) 0.6s;
+  }
+
+  .buttonToggler_leftBtn {
+    border-radius: 15px 0 0 15px;
+  }
+  .buttonToggler_rightBtn {
+    border-radius: 0 15px 15px 0;
+  }
+
+  .buttonToggler_activeBtn {
+    cursor: not-allowed;
+    background-color: $color-white;
+    border: 1px solid $color-btn-primary;
+    color: $color-btn-primary;
+    -webkit-box-shadow: inset 0px 0px 12px -5px $color-btn-shadow;
+    -moz-box-shadow: inset 0px 0px 12px -5px $color-btn-shadow;
+    box-shadow: inset 0px 0px 12px -5px $color-btn-shadow;
+  }
+}
+
+// MEDIA QUERIES
+.buttonTogglerContainer {
+  @media (min-width: 425px) {
+    .buttonToggler_Btn {
+      font-size: 15px;
+    }
+  }
+  @media (min-width: 550px) {
+    .buttonToggler_Btn {
+      font-size: 18px;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .buttonTogglerContainer {
+    margin-left: 45%;
+  }
+}

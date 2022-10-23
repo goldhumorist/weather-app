@@ -1,0 +1,65 @@
+@import "../../../variables";
+.selectedCity {
+  margin-top: 25px;
+
+  .selectedCity_name {
+    color: #0000cd;
+    font-weight: bold;
+  }
+}
+
+.cityForm_container {
+  text-align: center;
+}
+
+.content_container {
+  margin-bottom: 15px;
+
+  .options_container {
+    width: 100%;
+
+    .noEnteredCity {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+
+      p {
+        margin-top: 25px;
+        font-size: 16px;
+      }
+    }
+
+    .option_container {
+      display: flex;
+      flex-direction: column;
+
+      .option {
+        cursor: pointer;
+        border: 1px solid #ffffffbd;
+        border-radius: 15px;
+        margin-top: 13px;
+        padding-top: 5px;
+        height: 35px;
+        min-width: 150px;
+        text-align: center;
+        transition: background-color cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s,
+          width cubic-bezier(0.165, 0.84, 0.44, 1) 2s;
+        background-color: #0000ff;
+        color: white;
+
+        &:hover {
+          background-color: rgb(119, 185, 255);
+          width: 340px;
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep span {
+  font-size: 16px;
+}
+
+.btn_container {
+  margin-top: 30px;
+}

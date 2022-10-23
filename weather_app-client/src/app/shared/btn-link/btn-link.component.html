@@ -1,0 +1,22 @@
+<div
+  type="button"
+  [ngClass]="{
+    btnLink_leftContainer: positionIsLeft,
+    btnLink_rightContainer: !positionIsLeft
+  }"
+  (click)="onclick()"
+>
+  <ng-container *ngIf="positionIsLeft">
+    <span class="iconContainer">
+      <mat-icon>arrow_back</mat-icon>
+    </span>
+  </ng-container>
+
+  <span>{{ text }}</span>
+
+  <ng-container *ngIf="!positionIsLeft">
+    <span class="iconContainer">
+      <mat-icon>arrow_forward</mat-icon>
+    </span>
+  </ng-container>
+</div>

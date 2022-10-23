@@ -1,0 +1,19 @@
+input {
+  width: 100%;
+  min-width: 200px;
+  max-width: 350px;
+  height: 45px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 18px;
+  padding: 0 10px 0 10px;
+  font-size: 16px;
+}
+input::placeholder {
+  font-size: 13px;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}

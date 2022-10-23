@@ -1,0 +1,67 @@
+@import "../../../variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7vh;
+
+  .header_logoContainer {
+    display: none;
+  }
+
+  .header_logoImg {
+    height: 65px;
+  }
+
+  .header_menuOpenContainer {
+    position: relative;
+
+    .shadowModal {
+      position: absolute;
+      width: 92vw;
+      height: 96vh;
+      cursor: pointer;
+    }
+  }
+
+  .header_menuBtn {
+    padding: 0;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 35px;
+
+    .customIconSize {
+      font-size: 40px;
+      height: 33px;
+      width: 40px;
+    }
+  }
+
+  .header_cityContainer {
+    min-width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header_cityName {
+      font-size: 23px;
+      margin: 0 5px 0 5px;
+    }
+  }
+}
+
+// MEDIA QUERIES
+.header {
+  @media (min-width: 1024px) {
+    .header_logoContainer {
+      display: block;
+    }
+    .header_MenuContainer {
+      display: none;
+    }
+  }
+}

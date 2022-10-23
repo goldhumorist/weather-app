@@ -1,0 +1,60 @@
+@import "../../../variables";
+
+.weatherForecastCardContainer {
+  background: $color-bg-gray;
+  height: 125px;
+  margin-top: 3px;
+  width: 55px;
+  // max-width: 150px;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid $color-bg-weather-card;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  -webkit-box-shadow: 5px 5px 24px -8px $color-shadow-gray;
+  -moz-box-shadow: 5px 5px 24px -8px $color-shadow-gray;
+  box-shadow: 5px 5px 24px -8px $color-shadow-gray;
+
+  .weatherForecastCard_icon {
+    height: 55px;
+    width: 55px;
+  }
+
+  .weatherForecastCard_text {
+    font-size: 15px;
+  }
+}
+
+// MEDIA QUERIES
+@media (min-width: 375px) {
+  .weatherForecastCardContainer {
+    width: 70px;
+  }
+}
+@media (min-width: 525px) {
+  .weatherForecastCardContainer {
+    width: 100px;
+  }
+}
+@media (min-width: 600px) {
+  .weatherForecastCardContainer {
+    width: 115px;
+  }
+}
+@media (min-width: 768px) {
+  .weatherForecastCardContainer {
+    width: 130px;
+  }
+}
+
+.weatherForecastCardContainer {
+  @media (min-width: 550px) {
+    .weatherForecastCard_text {
+      font-size: 17px;
+    }
+  }
+}

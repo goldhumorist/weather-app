@@ -1,0 +1,13 @@
+<article class="weatherForecastCardContainer">
+  <span class="weatherForecastCard_text">{{ tempInCurrentday }}°C</span>
+  <img
+    loading="lazy"
+    [src]="iconSrc"
+    class="weatherForecastCard_icon"
+    alt="icon"
+  />
+
+  <span class="weatherForecastCard_text">{{
+    currentDate | date: "dd LLL"
+  }}</span>
+</article>

@@ -1,0 +1,8 @@
+<button
+  type="{{ btnConfig.type }}"
+  class="submitBtn"
+  [disabled]="disabled"
+  (click)="btnConfig.type === 'button' ? onclick() : null"
+>
+  {{ btnConfig.text }}
+</button>

@@ -1,0 +1,9 @@
+<ng-container *ngIf="isLoading$ | async; else content">
+  <div class="loadingContainer">
+    <app-custom-loader></app-custom-loader>
+  </div>
+</ng-container>
+
+<ng-template #content>
+  <router-outlet></router-outlet>
+</ng-template>

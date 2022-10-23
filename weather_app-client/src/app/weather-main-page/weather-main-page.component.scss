@@ -1,0 +1,29 @@
+.mainPageContainer {
+  padding: 20px;
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  .navbar_container {
+    display: none;
+  }
+
+  .loadingContainer {
+    height: 450px;
+    width: 100%;
+  }
+}
+
+// MEDIA QUERIES
+@media (min-width: 1024px) {
+  .mainPageContainer {
+    .mainPage_board {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navbar_container {
+      display: block;
+    }
+  }
+}

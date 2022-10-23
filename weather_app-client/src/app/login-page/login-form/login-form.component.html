@@ -1,0 +1,67 @@
+<form class="form" (ngSubmit)="submitForm()" [formGroup]="loginForm">
+  <div>
+    <!-- <input type="text" placeholder="email@gmail.com" formControlName="email" /> -->
+    <app-input-field
+      [inputProperties]="{
+        type: 'text',
+        placeholder: 'email@gmail.com'
+      }"
+      [control]="loginForm.controls.email"
+    ></app-input-field>
+    <ng-container
+      *ngIf="loginForm.get('email')?.touched || loginForm.get('email')?.dirty"
+    >
+      <span
+        *ngIf="
+        loginForm.get('email')?.errors?.['required'] 
+      "
+        class="errorMsg"
+      >
+        Please enter your email.
+      </span>
+      <span
+        *ngIf=" loginForm.get('email')?.errors?.['email'] "
+        class="errorMsg"
+      >
+        Please enter a valid email.
+      </span>
+    </ng-container>
+  </div>
+  <div>
+    <!-- <input type="password" placeholder="password" formControlName="password" /> -->
+    <app-input-field
+      [inputProperties]="{
+        type: 'password',
+        placeholder: 'password'
+      }"
+      [control]="loginForm.controls.password"
+    ></app-input-field>
+    <ng-container
+      *ngIf="
+        loginForm.get('password')?.touched || loginForm.get('password')?.dirty
+      "
+    >
+      <span
+        *ngIf="
+        loginForm.get('password')?.errors?.['required'] 
+      "
+        class="errorMsg"
+      >
+        Please enter password.
+      </span>
+      <span
+        *ngIf=" loginForm.get('password')?.errors?.['minlength'] "
+        class="errorMsg"
+      >
+        The password must contain at least 8 character.
+      </span>
+    </ng-container>
+  </div>
+
+  <div class="btn_container">
+    <app-primary-btn
+      [btnConfig]="{ type: 'submit', text: 'Login' }"
+      [disabled]="!loginForm.valid"
+    ></app-primary-btn>
+  </div>
+</form>

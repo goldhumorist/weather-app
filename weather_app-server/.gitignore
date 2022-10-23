@@ -1,0 +1,14 @@
+node_modules/
+.vs/
+.vscode
+bin/
+/.idea
+.ci/
+.nyc_output/
+coverage/
+npm-debug.log
+package-lock.json
+yarn.lock
+.DS_Store
+dump.rdb
+.env

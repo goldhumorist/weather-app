@@ -1,0 +1,58 @@
+<p class="selectedCity">
+  Your selected city:
+  <span class="selectedCity_name"
+    >{{ selectedCity ? selectedCity : "No one" }}
+  </span>
+</p>
+
+<div class="cityForm_container">
+  <app-input-field
+    #inputRef
+    [inputProperties]="{ type: 'text', placeholder: 'City' }"
+  >
+  </app-input-field>
+</div>
+
+<div [ngClass]="{ content_container: true, noEnteredCity: !cities.length }">
+  <div class="options_container">
+    <div class="noEnteredCity" *ngIf="!cities.length">
+      <ng-container *ngIf="dataCityIsLoading">
+        <mat-spinner diameter="50"></mat-spinner>
+      </ng-container>
+
+      <p *ngIf="!dataCityIsLoading && !errorMsg && !selectedCity">
+        Please enter your city
+      </p>
+
+      <p *ngIf="!dataCityIsLoading && errorMsg">
+        {{ errorMsg }}
+      </p>
+    </div>
+
+    <div
+      class="option_container"
+      *ngFor="let city of cities"
+      (click)="selectCity(city)"
+    >
+      <span
+        [ngClass]="{
+          option: true,
+          selected_option: selectedCity === city
+        }"
+        >{{ city }}</span
+      >
+    </div>
+  </div>
+</div>
+
+<ng-container *ngIf="!cities.length && !dataCityIsLoading">
+  <ng-content select="mat-slide-toggle"></ng-content>
+
+  <div class="btn_container">
+    <app-primary-btn
+      [disabled]="!selectedCity"
+      [btnConfig]="{ type: 'button', text: 'Continue' }"
+      (btnClickEmitter)="saveUserSettings()"
+    ></app-primary-btn>
+  </div>
+</ng-container>

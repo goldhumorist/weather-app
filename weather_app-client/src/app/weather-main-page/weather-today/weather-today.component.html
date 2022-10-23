@@ -1,0 +1,27 @@
+<section class="weatherBoard">
+  <div class="weatherBoard_mainInfoContainer">
+    <div class="weatherBoard_mainInfo">
+      <p class="weatherBoard_todayTemp">{{ mainTemp }}°C</p>
+      <p class="weatherBoard_todayDate">Today, {{ date | date: "dd LLL" }}</p>
+    </div>
+    <div class="weatherBoard_iconContainer">
+      <img
+        class="weatherBoard__mainIcon"
+        [src]="weatherIconSrc"
+        alt="Weather_icon"
+      />
+    </div>
+
+    <div class="weatherBoard_mainInfo">
+      <p class="weatherBoard_todayMinMaxTemp">
+        {{ minTemp }}°C / {{ maxTemp }}°C
+      </p>
+      <p class="weatherBoard_todayDesc">{{ weatherDesc }}</p>
+    </div>
+  </div>
+
+  <app-weather-sub-info
+    [additionalInfo]="additionalInfo"
+    [isOnSenter]="true"
+  ></app-weather-sub-info>
+</section>

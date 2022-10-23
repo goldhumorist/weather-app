@@ -1,0 +1,26 @@
+@import "../../../variables";
+
+.submitBtn {
+  display: block;
+  margin: 0 auto;
+  min-width: 220px;
+  max-width: 300px;
+  width: 90%;
+  color: $color-white;
+  background-color: $color-btn-primary;
+  border-radius: 25px;
+  height: 45px;
+  border: none;
+  font-size: 21px;
+  cursor: pointer;
+}
+.submitBtn:focus {
+  border: none;
+  outline: none;
+}
+
+.submitBtn:disabled,
+.submitBtn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,0 +1,33 @@
+<main class="mainPageContainer">
+  <app-header></app-header>
+  <div class="mainPage_board">
+    <nav class="navbar_container">
+      <app-navbar></app-navbar>
+    </nav>
+
+    <ng-container *ngIf="weatherData; else loading">
+      <app-weather-today
+        *ngIf="forecastTime === ONE_DAY"
+        [weatherData]="weatherData"
+      ></app-weather-today>
+
+      <div *ngIf="forecastTime === FIVE_DAYS" style="height: 450px">
+        <app-weather-forecast
+          [weatherData]="weatherData"
+        ></app-weather-forecast>
+      </div>
+    </ng-container>
+
+    <ng-template #loading>
+      <div class="loadingContainer">
+        <app-custom-loader></app-custom-loader>
+      </div>
+    </ng-template>
+  </div>
+
+  <app-btn-toggler
+    [isActiveButtons]="!!weatherData"
+    [activeButton]="forecastTime"
+    (changeWeatherModeEmmiter)="changeForecastTime()"
+  ></app-btn-toggler>
+</main>

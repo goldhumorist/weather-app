@@ -1,0 +1,57 @@
+<div
+  class="additionalInfoContainerCentered"
+  [ngClass]="{
+    additionalInfoContainerCentered: isOnSenter,
+    additionalInfoContainer: !isOnSenter
+  }"
+>
+  <div class="additionalInfo_infoRow">
+    <div class="additionalInfo_titleContainer">
+      <mat-icon>device_thermostat</mat-icon>
+      <span>Feels Like</span>
+    </div>
+    <div class="additionalInfo_separator">|</div>
+    <div class="additionalInfo_value">{{ feelsLike }} °C</div>
+  </div>
+
+  <div class="additionalInfo_infoRow">
+    <div class="additionalInfo_titleContainer">
+      <mat-icon>visibility</mat-icon>
+      <span>Visibility</span>
+    </div>
+    <div class="additionalInfo_separator">|</div>
+    <div class="additionalInfo_value">{{ visibility }} m</div>
+  </div>
+
+  <div class="additionalInfo_infoRow">
+    <div class="additionalInfo_titleContainer">
+      <mat-icon>air</mat-icon>
+
+      <span>Wind</span>
+    </div>
+    <div class="additionalInfo_separator">|</div>
+    <div class="additionalInfo_value">{{ wind }} m/s</div>
+  </div>
+
+  <ng-container *ngIf="isOnSenter">
+    <div class="additionalInfo_infoRow">
+      <div class="additionalInfo_titleContainer">
+        <mat-icon>wb_twilight</mat-icon>
+
+        <span>Sunrize</span>
+      </div>
+      <div class="additionalInfo_separator">|</div>
+      <div class="additionalInfo_value">{{ sunrise | date: "HH:mm" }} h</div>
+    </div>
+
+    <div class="additionalInfo_infoRow">
+      <div class="additionalInfo_titleContainer">
+        <mat-icon>landscape</mat-icon>
+
+        <span>Sunset</span>
+      </div>
+      <div class="additionalInfo_separator">|</div>
+      <div class="additionalInfo_value">{{ sunset | date: "HH:mm" }} °C</div>
+    </div>
+  </ng-container>
+</div>

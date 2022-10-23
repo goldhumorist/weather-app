@@ -1,0 +1,104 @@
+<form class="form" [formGroup]="signupForm" (ngSubmit)="submitForm()">
+  <div>
+    <app-input-field
+      [inputProperties]="{
+        type: 'text',
+        placeholder: 'email@gmail.com'
+      }"
+      [control]="signupForm.controls.email"
+    ></app-input-field>
+
+    <ng-container
+      *ngIf="signupForm.get('email')?.touched || signupForm.get('email')?.dirty"
+    >
+      <span
+        *ngIf="
+          signupForm.get('email')?.errors?.['required'] 
+        "
+        class="errorMsg"
+      >
+        Please enter your email.
+      </span>
+
+      <span
+        *ngIf=" signupForm.get('email')?.errors?.['email'] "
+        class="errorMsg"
+      >
+        Please enter a valid email.
+      </span>
+    </ng-container>
+  </div>
+
+  <div formGroupName="passwordGroup">
+    <div>
+      <app-input-field
+        [inputProperties]="{
+          type: 'password',
+          placeholder: 'password'
+        }"
+        [control]="signupForm.get('passwordGroup.password')"
+      ></app-input-field>
+
+      <ng-container
+        *ngIf="
+          signupForm.get('passwordGroup.password')?.touched ||
+          signupForm.get('passwordGroup.password')?.dirty
+        "
+      >
+        <span
+          *ngIf="
+          signupForm.get('passwordGroup.password')?.errors?.['required']"
+          class="errorMsg"
+        >
+          Please enter a password.
+        </span>
+
+        <span
+          *ngIf=" signupForm.get('passwordGroup.password')?.errors?.['minlength']"
+          class="errorMsg"
+        >
+          The password must contain at least 8 character.
+        </span>
+      </ng-container>
+    </div>
+
+    <div>
+      <app-input-field
+        [inputProperties]="{
+          type: 'password',
+          placeholder: 'confirm password'
+        }"
+        [control]="signupForm.get('passwordGroup.confirmPassword')"
+      ></app-input-field>
+
+      <ng-container
+        *ngIf="
+          signupForm.get('passwordGroup.confirmPassword')?.touched ||
+          signupForm.get('passwordGroup.confirmPassword')?.dirty
+        "
+      >
+        <span
+          *ngIf="
+          signupForm.get('passwordGroup.confirmPassword')?.errors?.['required']"
+          class="errorMsg"
+        >
+          Please confirm your email address.
+        </span>
+
+        <span
+          *ngIf=" signupForm.get('passwordGroup')?.errors?.['match']"
+          class="errorMsg"
+        >
+          Passwords must match
+        </span>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="btn_container">
+    <app-primary-btn
+      [btnConfig]="{ type: 'submit', text: 'Signup' }"
+      [disabled]="!signupForm.valid"
+    ></app-primary-btn>
+  </div>
+</form>

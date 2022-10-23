@@ -1,0 +1,22 @@
+@import "../../../variables";
+.form {
+  max-width: 350px;
+  width: 100%;
+  padding: 0 10px 0 10px;
+  margin-top: 20px;
+
+  .errorMsg {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-error-text;
+  }
+
+  .btn_container {
+    margin-top: 35px;
+  }
+}
+.titleContainer {
+  text-align: center;
+  padding: 0 20px 0 20px;
+}

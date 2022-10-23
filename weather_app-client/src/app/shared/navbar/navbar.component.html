@@ -1,0 +1,24 @@
+<div class="navbar">
+  <a
+    [routerLink]="['/']"
+    routerLinkActive="active-router-link"
+    class="router-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Home</a
+  >
+  <a
+    [routerLink]="['/settings']"
+    routerLinkActive="active-router-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="router-link"
+    >Settings</a
+  >
+  <a
+    [routerLink]="['/login']"
+    routerLinkActive="active-router-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="router-link"
+    (click)="logout()"
+    >Logout</a
+  >
+</div>

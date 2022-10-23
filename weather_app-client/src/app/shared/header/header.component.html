@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="header_logoContainer">
+    <img class="header_logoImg" src="../../../assets/logo.png" alt="logo" />
+  </div>
+
+  <div class="header_MenuContainer">
+    <ng-container *ngIf="menuIsOpen; else menuIsClosed">
+      <div class="header_menuOpenContainer">
+        <div class="shadowModal" (click)="togleMenu()"></div>
+
+        <button class="header_menuBtn" (click)="togleMenu()">
+          <mat-icon class="customIconSize">close</mat-icon>
+        </button>
+
+        <app-navbar></app-navbar>
+      </div>
+    </ng-container>
+
+    <ng-template #menuIsClosed>
+      <button class="header_menuBtn" (click)="togleMenu()">
+        <mat-icon class="customIconSize">menu</mat-icon>
+      </button>
+    </ng-template>
+  </div>
+
+  <div class="header_cityContainer">
+    <div><mat-icon>location_on</mat-icon></div>
+
+    <div>
+      <p class="header_cityName">{{ city$ | async }}</p>
+    </div>
+  </div>
+</header>

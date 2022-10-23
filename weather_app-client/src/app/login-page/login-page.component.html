@@ -1,0 +1,13 @@
+<div class="loginPageContainer">
+  <app-sub-header
+    title="Login"
+    subTitle="Enter your data for sign in"
+  ></app-sub-header>
+
+  <app-login-form (loginFormEmitter)="login($event)"></app-login-form>
+
+  <app-btn-link
+    text="New user ?"
+    (btnLinkOnClick)="navigateToSignUp()"
+  ></app-btn-link>
+</div>

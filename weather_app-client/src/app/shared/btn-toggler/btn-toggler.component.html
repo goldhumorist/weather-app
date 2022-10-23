@@ -1,0 +1,20 @@
+<div class="buttonTogglerContainer">
+  <button
+    [disabled]="activeButton === ONE_DAY || !isActiveButtons"
+    type="button"
+    (click)="changeWeatherMode()"
+    class="buttonToggler_Btn buttonToggler_leftBtn"
+    [ngClass]="{ buttonToggler_activeBtn: activeButton === ONE_DAY }"
+  >
+    Today
+  </button>
+  <button
+    [disabled]="activeButton === FIVE_DAYS || !isActiveButtons"
+    type="button"
+    (click)="changeWeatherMode()"
+    class="buttonToggler_Btn buttonToggler_rightBtn"
+    [ngClass]="{ buttonToggler_activeBtn: activeButton === FIVE_DAYS }"
+  >
+    Forecast 5 days
+  </button>
+</div>

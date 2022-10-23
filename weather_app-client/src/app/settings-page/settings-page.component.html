@@ -1,0 +1,23 @@
+<div class="settingsPageContainer">
+  <app-sub-header
+    title="Settings"
+    subTitle="If you want change location settings, please update it"
+  ></app-sub-header>
+
+  <app-select-city-form
+    (saveUserSettingsEmitter)="saveUserSettings($event)"
+    [initialCity]="userData.city"
+  >
+    <mat-slide-toggle color="primary" [checked]="userData.isNewsletter"
+      ><span title="You will receive weather info on your mail every day."
+        >Subscribe on newsletter?</span
+      ></mat-slide-toggle
+    >
+  </app-select-city-form>
+
+  <app-btn-link
+    text="Main page"
+    [positionIsLeft]="true"
+    (btnLinkOnClick)="navigateToMainPage()"
+  ></app-btn-link>
+</div>

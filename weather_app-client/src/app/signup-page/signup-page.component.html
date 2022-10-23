@@ -1,0 +1,13 @@
+<div class="signupPageContainer">
+  <app-sub-header
+    title="Registration"
+    subTitle="Enter your data for registration"
+  ></app-sub-header>
+
+  <app-signup-form (signupFormEmmiter)='signup($event)'></app-signup-form>
+
+  <app-btn-link
+    text="Already have an account ?"
+    (btnLinkOnClick)="navigateToLogin()"
+  ></app-btn-link>
+</div>

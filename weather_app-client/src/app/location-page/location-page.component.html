@@ -1,0 +1,17 @@
+<div class="locationPage_container">
+  <app-sub-header
+    title="Location"
+    subTitle="Please select your location"
+  ></app-sub-header>
+
+  <app-select-city-form
+    (saveUserSettingsEmitter)="saveUserSettings($event)"
+    [initialCity]="initialCityFromStore"
+  ></app-select-city-form>
+
+  <app-btn-link
+    text="To login"
+    [positionIsLeft]="true"
+    (btnLinkOnClick)="navigateToLogin()"
+  ></app-btn-link>
+</div>

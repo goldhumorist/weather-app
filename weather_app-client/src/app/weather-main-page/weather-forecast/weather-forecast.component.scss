@@ -1,0 +1,121 @@
+@import "../../../variables";
+.weatherBoard {
+  border: solid 1px $color-white;
+  background-color: $color-bg-gray;
+  border-radius: 15px;
+  height: 450px;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  padding-top: 5px;
+
+  .weatherBoard_mainInfoContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 10px 10px;
+
+    .weatherBoard_mainInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .weatherBoard_todayTemp {
+        font-size: 25px;
+        font-weight: 600;
+        margin: 5px 0 5px 0;
+      }
+
+      .weatherBoard_todayDate {
+        font-size: 13px;
+      }
+    }
+
+    .weatherBoard_iconContainer {
+      margin: 0;
+
+      .weatherBoard__mainIcon {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+
+  .weatherBoard_cardContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .weatherBoard_chartContainer {
+    padding: 5px;
+    margin: 0 auto;
+    background-color: $color-bg-chart;
+    width: 95%;
+    height: 40%;
+    border-radius: 15px;
+  }
+}
+
+// MEDIA QUERIES
+.weatherBoard {
+  .weatherBoard_mainInfoContainer {
+    .weatherBoard_mainInfo {
+      @media (min-width: 425px) {
+        .weatherBoard_todayTemp {
+          font-size: 35px;
+        }
+        .weatherBoard_todayDate {
+          font-size: 16px;
+        }
+        .weatherBoard_iconContainer {
+          margin: 10px 10px 0 10px;
+
+          .weatherBoard__mainIcon {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+
+      @media (min-width: 525px) {
+        .weatherBoard_todayTemp {
+          font-size: 38px;
+        }
+        .weatherBoard_todayDate {
+          font-size: 18px;
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      .weatherBoard_mainInfo {
+        margin-right: 10%;
+      }
+    }
+  }
+  @media (min-width: 425px) {
+    .weatherBoard_mainInfoContainer {
+      padding: 0 22px 10px 25px;
+    }
+  }
+
+  @media (min-width: 525px) {
+    .weatherBoard_chartContainer {
+      height: 43%;
+    }
+
+    .weatherBoard_cardContainer {
+      margin-top: 10px;
+      padding: 0 25px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .weatherBoard {
+    min-width: 700px;
+  }
+}

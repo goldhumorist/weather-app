@@ -1,0 +1,149 @@
+.additionalInfo_infoRow {
+  display: flex;
+  justify-content: space-between;
+
+  .additionalInfo_titleContainer {
+    white-space: nowrap;
+  }
+
+  .additionalInfo_value {
+    white-space: nowrap;
+  }
+}
+
+.additionalInfoContainerCentered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+
+  .additionalInfo_infoRow {
+    width: 100%;
+    margin-top: 10px;
+
+    .additionalInfo_titleContainer {
+      width: 33%;
+
+      span {
+        vertical-align: super;
+        margin-left: 10px;
+      }
+    }
+
+    .additionalInfo_value {
+      width: 25%;
+      font-size: 16px;
+    }
+  }
+}
+
+.additionalInfoContainer {
+  .additionalInfo_infoRow {
+    width: 80px;
+
+    .additionalInfo_titleContainer {
+      span {
+        display: none;
+      }
+      .mat-icon {
+        font-size: 18px;
+        height: 18px;
+        width: 18px;
+      }
+    }
+
+    .additionalInfo_value {
+      width: 60%;
+      font-size: 13px;
+    }
+  }
+}
+
+// MEDIA QUERIES
+@media (min-width: 375px) {
+  .additionalInfoContainerCentered {
+    .additionalInfo_infoRow {
+      width: 90%;
+    }
+  }
+  .additionalInfoContainer {
+    .additionalInfo_infoRow {
+      width: 100px;
+    }
+  }
+}
+@media (min-width: 425px) {
+  .additionalInfoContainerCentered {
+    .additionalInfo_infoRow {
+      width: 80%;
+    }
+  }
+  .additionalInfoContainer {
+    .additionalInfo_infoRow {
+      width: 120px;
+
+      .additionalInfo_value {
+        width: 45%;
+      }
+    }
+  }
+}
+@media (min-width: 525px) {
+  .additionalInfoContainerCentered {
+    .additionalInfo_infoRow {
+      width: 60%;
+
+      .additionalInfo_titleContainer {
+        width: 25%;
+        span {
+          font-size: 18px;
+        }
+      }
+      .additionalInfo_value {
+        width: 15%;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .additionalInfoContainer {
+    .additionalInfo_infoRow {
+      width: 200px;
+
+      .additionalInfo_titleContainer {
+        width: 45%;
+
+        span {
+          display: inline;
+          vertical-align: text-top;
+          font-size: 15px;
+          margin-left: 5px;
+        }
+      }
+
+      .additionalInfo_value {
+        width: 25%;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .additionalInfoContainer {
+    .additionalInfo_infoRow {
+      width: 270px;
+
+      .additionalInfo_titleContainer {
+        width: 40%;
+
+        span {
+          font-size: 17px;
+        }
+      }
+
+      .additionalInfo_value {
+        width: 25%;
+        font-size: 16px;
+      }
+    }
+  }
+}

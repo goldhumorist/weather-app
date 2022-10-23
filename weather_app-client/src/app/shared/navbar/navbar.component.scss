@@ -1,0 +1,37 @@
+@import "../../../variables";
+
+.navbar {
+  position: absolute;
+  background-color: $color-bg-gray;
+  width: 180px;
+  max-height: 130px;
+  border-radius: 15px;
+  padding: 10px;
+  padding-top: 0;
+  border: solid 1px $color-white;
+  display: flex;
+  flex-direction: column;
+
+  .router-link {
+    height: 30px;
+    text-decoration: none;
+    color: $color-black;
+    background-color: $color-white;
+    margin-top: 10px;
+    border-radius: 15px;
+    font-size: 17px;
+    padding-left: 10px;
+    padding-top: 3px;
+  }
+  .active-router-link {
+    background-color: $color-bg-link;
+    color: $color-white;
+  }
+}
+
+// MEDIA QUERIES
+@media (min-width: 1024px) {
+  .navbar {
+    position: relative;
+  }
+}
