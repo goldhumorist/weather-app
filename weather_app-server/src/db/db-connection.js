@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient } = require("mongodb");
 
 const CONNECTIONS_PARAMS = {
     useNewUrlParser: true,
@@ -7,6 +7,8 @@ const CONNECTIONS_PARAMS = {
 const url = process.env.DB_CONNECT_URI;
 
 const connectionPromise = MongoClient.connect(url, CONNECTIONS_PARAMS);
-const dbPromise = connectionPromise.then(client => client.db());
+const dbPromise = connectionPromise
+    .then(client => client.db())
+    .catch(err => console.log(err));
 
 module.exports = dbPromise;

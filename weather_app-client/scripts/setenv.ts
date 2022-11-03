@@ -14,7 +14,8 @@ const environmentFileContent = `
 export const environment = {
    production: ${isProduction},
    BASE_API_URL: "${process.env.BASE_API_URL}",
-   CITIES_API_KEY: "${process.env.CITIES_API_KEY}"
+   CITIES_API_KEY: "${process.env.CITIES_API_KEY}",
+   WS_URL: "${process.env.WS_URL}",
 };
 `;
 // write the content to the respective file
